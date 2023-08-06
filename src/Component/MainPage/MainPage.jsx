@@ -1,7 +1,16 @@
 import react from 'react';
+import MainNav from './MainNav';
+import MainItemList from './MainItemList';
 
 function MainPage() {
-  return <div>This is Main Page</div>;
+  return (
+    <div className="main-container">
+      <MainNav />
+      <div className="main-itemList-container">
+        <MainItemList />
+      </div>
+    </div>
+  );
 }
 
 export default MainPage;

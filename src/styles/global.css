@@ -1,9 +1,83 @@
 .App {
+  display: flex;
+  flex-direction: column;
+
   text-align: center;
+
+  height: 100vh;
+  background-color: #303030;
+  color: #fff;
 }
 
-.main-container {
-  background-color: #303030;
+.header-container {
+  display: grid;
+  grid-template-rows: 15% auto 30% 15%;
+  height: 10%;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+}
+
+.footer-container {
+  height: 15%;
 }
 
 /* #f90 #303030; */
+
+/* header */
+.header-title {
+  grid-row-start: 2;
+  font-weight: bold;
+}
+
+/* main */
+.main-container {
+  width: 70%;
+  height: 90%;
+  max-width: 700px;
+  min-width: 150px;
+  min-height: 400px;
+  background-color: #303030;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 30px;
+  background-color: #ffffff;
+
+  font-size: 12px;
+  font-weight: bold;
+  color: #303030;
+}
+
+.main-nav > ul {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+
+.main-nav > ul > li {
+  cursor: pointer;
+}
+
+.main-itemList-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  height: 93%;
+}
+
+.main-itemList-board {
+  width: 95%;
+  height: 95%;
+  background-color: gainsboro;
+}
