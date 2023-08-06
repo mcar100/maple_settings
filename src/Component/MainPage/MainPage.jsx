@@ -8,6 +8,10 @@ function MainPage() {
       <MainNav />
       <div className="main-itemList-container">
         <MainItemList />
+        <div className="button-container">
+          <button>리셋</button>
+          <button>완료</button>
+        </div>
       </div>
     </div>
   );
