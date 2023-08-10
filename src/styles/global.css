@@ -24,6 +24,9 @@
 }
 
 .footer-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
   height: 15%;
 }
 
@@ -61,16 +64,19 @@
 
 /* main */
 .main-container {
-  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   height: 90%;
-  max-width: 700px;
-  min-width: 150px;
+  width: auto;
   min-height: 400px;
   background-color: #303030;
 }
 
 .main-nav {
-  width: 150px;
+  width: 100%;
   height: 30px;
 
   font-size: 12px;
@@ -105,92 +111,133 @@
 .main-itemList-board {
   display: grid;
   gap: 3px;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: repeat(6, 50px);
-  width: 95%;
+  grid-template-rows: repeat(3, 33%);
+  width: 100%;
   height: 90%;
+  padding: 0 5px;
 }
 
-/* item */
-.main-item-container {
-  display: grid;
-  grid-template-columns: 40% 60%;
-  border: 1px solid #303030;
-  border-radius: 5px;
-  width: 143px;
-  height: 50px;
-}
-
-.main-item-head {
-  padding: 8px 5px 5px 5px;
-}
-
-.main-item-img {
-  width: 25px;
-  height: 30px;
-}
-
-.main-item-body {
+.main-itemList-field {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  color: #303030;
+  grid-column-start: 1;
+}
+
+.main-itemList-potion {
+  grid-row-start: 1;
+}
+
+.main-itemList-switching {
+  grid-row-start: 2;
+}
+
+.main-itemList-partybuff {
+  grid-row-start: 3;
+}
+.main-itemList-title {
+  align-self: flex-start;
+
+  padding-left: 5px;
+  margin-bottom: 5px;
+  color: #f90;
+  font-size: 13px;
   font-weight: bold;
 }
 
-.main-item-title {
-  padding: 1px;
-  font-size: 13px;
+.main-itemList-inventory {
+  display: flex;
 }
 
-.main-item-checkbutton {
-  align-self: center;
-  padding: 3px 0px;
-  width: 50px;
+/* main item */
+.main-item-container {
+  display: grid;
+  grid-template-rows: 65% 35%;
   border: 1px solid #303030;
   border-radius: 5px;
+  width: 35px;
+  height: 43px;
+}
+
+.main-item-img {
+  padding: 5px 2px 0px 2px;
+}
+
+.main-item-img > img {
+  width: 18px;
+  height: 20px;
+}
+
+.main-item-title {
+  padding-bottom: 2px;
+  color: #303030;
+  font-weight: bold;
+  font-size: 8px;
+}
+
+/* short item */
+.short-item-container {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+}
+
+.short-item-img {
+  width: 20px;
+  height: 20px;
+}
+
+.short-item-title {
+  color: black;
+  font-size: 3px;
+  font-weight: bold;
+}
+
+.short-item-addbutton {
+  position: absolute;
+  bottom: 30px;
+  width: 30px;
+  height: 16px;
   background-color: #fff;
-  font-size: 5px;
 }
 
-.main-item-checkbutton:hover {
-  background-color: #303030;
-  color: #fff;
+.short-item-addbutton > img {
+  width: 16px;
+  height: 16px;
 }
 
-@media (max-width: 850px) {
+/* dropbar */
+.dropbar-container {
+  display: grid;
+  grid-template-rows: 12% auto;
+  justify-items: center;
+
+  height: 80%;
+  width: auto;
+}
+
+.dropbar-handle {
+  position: relative;
+  top: -50px;
+  border-top: 40px solid transparent;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  border-bottom: 20px solid #f90;
+  width: 0;
+  height: 0;
+}
+
+.dropbar-body {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* media query */
+
+@media (min-width: 0px) {
   .main-itemList-container {
-    width: 600px;
-  }
-
-  .main-itemList-board {
-    grid-template-columns: 25% 25% 25% 25%;
-  }
-}
-
-@media (max-width: 750px) {
-  .main-itemList-container {
-    width: 450px;
-  }
-
-  .main-itemList-board {
-    grid-template-columns: 33% 33% 33%;
-  }
-}
-
-@media (max-width: 550px) {
-  .main-itemList-container {
-    width: 300px;
-  }
-
-  .main-itemList-board {
-    grid-template-columns: 50% 50%;
-  }
-}
-
-@media (max-width: 350px) {
-  .main-itemList-container {
-    max-width: 150px;
+    width: 150px;
   }
 
   .main-itemList-board {
@@ -199,5 +246,43 @@
 
   .button-container {
     justify-content: center;
+  }
+
+  .dropbar-container {
+    width: 150px;
+  }
+}
+
+@media (min-width: 550px) {
+  .main-itemList-container {
+    width: 300px;
+  }
+
+  .button-container {
+    justify-content: flex-end;
+  }
+
+  .dropbar-container {
+    width: 300px;
+  }
+}
+
+@media (min-width: 750px) {
+  .main-itemList-container {
+    width: 450px;
+  }
+
+  .dropbar-container {
+    width: 450px;
+  }
+}
+
+@media (min-width: 850px) {
+  .main-itemList-container {
+    width: 600px;
+  }
+
+  .dropbar-container {
+    width: 600px;
   }
 }

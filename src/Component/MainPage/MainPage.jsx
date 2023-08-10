@@ -1,6 +1,6 @@
-import react from 'react';
+import React from 'react';
 import MainNav from './MainNav';
-import MainItemList from './MainItemList';
+import MainItemList from '../Item/MainItemList';
 
 function MainPage() {
   return (

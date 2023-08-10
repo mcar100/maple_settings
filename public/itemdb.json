@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "익스트림 레드/블루",
+    "short_title": "몬파",
+    "type1": "boss",
+    "type2": "potion/coupon",
+    "image": "red_potion.jpg",
+    "state": [{ "공/마": 30 }],
+    "duration": [30]
+  },
+  {
+    "id": 2,
+    "title": "경험치 2배 쿠폰",
+    "short_title": "2배쿠폰",
+    "type1": "exp",
+    "type2": "potion/coupon",
+    "image": "2xcoupon.jpg",
+    "state": [{ "경험치": 2 }],
+    "duration": [15, 30]
+  },
+  {
+    "id": 3,
+    "title": "아기용 이유식",
+    "short_title": "이유식",
+    "type1": "boss",
+    "type2": "potion/coupon",
+    "image": "baby_potion.jpg",
+    "state": [{ "공/마": 7 }],
+    "duration": [20]
+  },
+  {
+    "id": 4,
+    "title": "소형 재물 획득의 비약",
+    "short_title": "소획비",
+    "type1": "exp",
+    "type2": "potion/coupon",
+    "image": "small_wealth_exlir.jpg",
+    "state": [{ "드롭": 20 }],
+    "duration": [30]
+  },
+  {
+    "id": 3,
+    "title": "재물 획득의 비약",
+    "short_title": "재획비",
+    "type1": "exp",
+    "type2": "potion/coupon",
+    "image": "big_wealth_exlir.jpg",
+    "state": [{ "드롭": 20 }],
+    "duration": [120]
+  }
+]

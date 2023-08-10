@@ -1,14 +1,16 @@
-function MainItem() {
-  const title = '몬파';
+import React, { useState, useEffect } from 'react';
+
+function MainItem({ title, image }) {
   return (
     <div className="main-item-container">
-      <div className="main-item-head">
-        <img className="main-item-img" src="/red_potion.png" />
+      <div className="main-item-img">
+        <img
+          loading="lazy"
+          src={require(`../../assets/icons/${image}`)}
+          alt={`${title}`}
+        />
       </div>
-      <div className="main-item-body">
-        <div className="main-item-title">{title}</div>
-        <button className="main-item-checkbutton">check</button>
-      </div>
+      <div className="main-item-title">{title}</div>
     </div>
   );
 }
