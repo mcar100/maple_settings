@@ -4,6 +4,7 @@ import MainItemList from '../Item/MainItemList';
 import { getItemDB } from '../../api/getItemDB';
 
 function MainPage() {
+  const [itemType, setItemType] = useState('boss');
   const [itemList, setItemList] = useState('');
   const [totalItemEffect, setTotalItemEffect] = useState({
     attackPower: 0,
@@ -30,8 +31,9 @@ function MainPage() {
 
   return (
     <div className="main-container">
-      <MainNav />
+      <MainNav setItemType={setItemType} />
       <MainItemList
+        itemType={itemType}
         itemList={itemList}
         totalItemEffect={totalItemEffect}
         setTotalItemEffect={setTotalItemEffect}

@@ -3,9 +3,9 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "baby_potion.png",
+      "src": "baby_potion.jpg",
       "sizes": "12x12",
-      "type": "image/png"
+      "type": "image/jpg"
     }
   ],
   "start_url": ".",

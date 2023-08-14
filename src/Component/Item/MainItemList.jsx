@@ -1,10 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import MainItem from './MainItem';
 
-function MainItemList({ itemList, totalItemEffect, setTotalItemEffect }) {
+function MainItemList({
+  itemType,
+  itemList,
+  totalItemEffect,
+  setTotalItemEffect,
+}) {
   const [reset, setReset] = useState(false);
   const [complete, setComplete] = useState(false);
-  const handleResetBtn = () => {
+  const [filteredItemList, setFilteredItemList] = useState('');
+  useEffect(() => {
+    if (itemList) {
+      setFilteredItemList(() => {
+        const newItemList = itemList.filter(
+          (item) => item.type1 === itemType && item.type2 === 'potion/coupon'
+        );
+        return newItemList;
+      });
+    }
+  }, [itemType]);
+
+  const resetTotalItemEffect = () => {
     setReset(true);
     setTotalItemEffect((prev) => {
       return {
@@ -22,6 +39,10 @@ function MainItemList({ itemList, totalItemEffect, setTotalItemEffect }) {
     });
   };
 
+  const handleResetBtn = () => {
+    resetTotalItemEffect();
+  };
+
   const handleCompleteBtn = () => {
     console.log(`현재 적용 중인 효과`);
     console.log(totalItemEffect);
@@ -34,23 +55,18 @@ function MainItemList({ itemList, totalItemEffect, setTotalItemEffect }) {
         <div className="main-itemList-field main-itemList-potion">
           <div className="main-itemList-title">도핑류</div>
           <div className="main-itemList-inventory">
-            {itemList ? (
-              itemList
-                // .filter(
-                //   (item) =>
-                //     item.type1 === 'boss' && item.type2 === 'potion/coupon'
-                // )
-                .map((item, idx) => (
-                  <MainItem
-                    key={`item-${idx}`}
-                    item={item}
-                    setTotalItemEffect={setTotalItemEffect}
-                    reset={reset}
-                    setReset={setReset}
-                    complete={complete}
-                    setComplete={setComplete}
-                  />
-                ))
+            {filteredItemList ? (
+              filteredItemList.map((item) => (
+                <MainItem
+                  key={item.id}
+                  item={item}
+                  setTotalItemEffect={setTotalItemEffect}
+                  reset={reset}
+                  setReset={setReset}
+                  complete={complete}
+                  setComplete={setComplete}
+                />
+              ))
             ) : (
               <div className="main-itemList-no-item">아이템이 없습니다.</div>
             )}
