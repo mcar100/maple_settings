@@ -113,7 +113,11 @@ function MainItem({
       >
         <img
           loading="lazy"
-          src={require(`../../assets/icons/${image}`)}
+          src={
+            image
+              ? require(`../../assets/icons/${image}`)
+              : require(`../../assets/icons/no_image`)
+          }
           alt={`${shortTitle}`}
         />
         <div className="main-item-title">{shortTitle}</div>
