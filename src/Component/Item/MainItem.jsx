@@ -116,7 +116,7 @@ function MainItem({
           src={
             image
               ? require(`../../assets/icons/${image}`)
-              : require(`../../assets/icons/no_image`)
+              : require(`../../assets/icons/no_image.jpg`)
           }
           alt={`${shortTitle}`}
         />
