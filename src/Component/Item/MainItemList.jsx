@@ -16,10 +16,11 @@ function MainItemList({
         const newItemList = itemList.filter(
           (item) => item.type1 === itemType && item.type2 === 'potion/coupon'
         );
+        console.log(itemType);
         return newItemList;
       });
     }
-  }, [itemType]);
+  }, [itemType, itemList]);
 
   const resetTotalItemEffect = () => {
     setReset(true);
