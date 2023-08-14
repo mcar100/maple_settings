@@ -59,7 +59,6 @@ function MainItem({
       }, timer * 1000);
 
       return () => {
-        console.log('이벤트 끝');
         clearInterval(setIntervalChecker);
         clearTimeout(setTimeoutChecker);
       };
@@ -133,6 +132,7 @@ const ItemContainer = styled.div`
     iscomplete && itemchecked
       ? css`
           animation: ${boxColor} ${timer}s linear;
+          pointer-events: none;
         `
       : ''}
 `;
@@ -150,7 +150,7 @@ const boxColor = keyframes`
     border-color: #f90;
     color: #f90;
   }
-  90%{
+  99%{
     border-color: red;
     color: red;
   }

@@ -8,8 +8,10 @@ function MainPage() {
   const [itemList, setItemList] = useState('');
   const [totalItemEffect, setTotalItemEffect] = useState({
     attackPower: 0,
+    attackRate: 0,
     bossPower: 0,
     ignoreDefense: 0,
+    damage: 0,
     criDamage: 0,
     critical: 0,
     allStat: 0,

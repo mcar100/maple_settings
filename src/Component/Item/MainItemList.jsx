@@ -28,8 +28,10 @@ function MainItemList({
       return {
         ...prev,
         attackPower: 0,
+        attackRate: 0,
         bossPower: 0,
         ignoreDefense: 0,
+        damage: 0,
         criDamage: 0,
         critical: 0,
         allStat: 0,
@@ -76,12 +78,10 @@ function MainItemList({
         <div className="main-itemList-field main-itemList-switching">
           {' '}
           <div className="main-itemList-title">스위칭류</div>
-          <div className="main-itemList-inventory"></div>
-        </div>
-        <div className="main-itemList-field main-itemList-partybuff">
-          {' '}
-          <div className="main-itemList-title">파티버프류</div>
-          <div className="main-itemList-inventory"></div>
+          <div className="main-itemList-inventory">
+            {' '}
+            <div className="main-itemList-no-item">추후 업뎃 예정</div>
+          </div>
         </div>
       </div>
       <div className="button-container">
