@@ -1,12 +1,7 @@
-import react from 'react';
-import ItemDropBar from './ItemDropBar';
+import React from 'react';
 
 function Footer() {
-  return (
-    <div className="footer-container">
-      <ItemDropBar />
-    </div>
-  );
+  return <div className="footer-container"></div>;
 }
 
 export default Footer;
