@@ -24,6 +24,8 @@ function MainItem({
     if (complete && itemChecked) {
       setIsComplete(true);
       setComplete(false);
+    } else {
+      setComplete(false);
     }
   }, [complete]);
 
