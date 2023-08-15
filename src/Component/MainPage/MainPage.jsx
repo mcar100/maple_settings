@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MainNav from './MainNav';
-import MainItemList from '../Item/MainItemList';
+import MainItemList from '../MainPage/MainItemList';
 import { getItemDB } from '../../api/getItemDB';
 
 function MainPage() {

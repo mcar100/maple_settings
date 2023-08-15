@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { styled, css, keyframes } from 'styled-components';
 
-function MainItem({
+function BuffItem({
   item,
   setTotalItemEffect,
   reset,
@@ -116,7 +116,7 @@ function MainItem({
           src={
             image
               ? require(`../../assets/icons/${image}`)
-              : require(`../../assets/icons/no_image.jpg`)
+              : require(`../../assets/icons/no-image.jpg`)
           }
           alt={`${shortTitle}`}
         />
@@ -126,7 +126,7 @@ function MainItem({
   );
 }
 
-export default MainItem;
+export default BuffItem;
 
 const ItemContainer = styled.div`
   border-color: ${(props) => (props.itemchecked ? '#f90' : '#303030')};

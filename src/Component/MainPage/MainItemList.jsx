@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import MainItem from './MainItem';
+import BuffItem from '../Item/BuffItem';
 
 function MainItemList({
   itemType,
@@ -60,7 +60,7 @@ function MainItemList({
           <div className="main-itemList-inventory">
             {filteredItemList ? (
               filteredItemList.map((item) => (
-                <MainItem
+                <BuffItem
                   key={item.id}
                   item={item}
                   setTotalItemEffect={setTotalItemEffect}
