@@ -187,12 +187,27 @@
 .main-item-duration {
   display: flex;
   justify-content: flex-end;
-  gap: 1px;
-  padding-right: 3px;
+  gap: 2px;
+  padding-right: 2px;
   z-index: 3;
 }
 
 .main-item-duration > div {
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-item-mode {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1px;
+  padding-right: 2px;
+  z-index: 3;
+}
+
+.main-item-mode > div {
   font-size: 10px;
   font-weight: bold;
   cursor: pointer;
