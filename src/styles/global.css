@@ -254,6 +254,7 @@
 
   .main-itemList-board {
     grid-template-columns: 100%;
+    grid-template-rows: 60% 40%;
   }
 
   .button-container {
@@ -264,6 +265,11 @@
 @media (min-width: 550px) {
   .main-itemList-container {
     width: 305px;
+  }
+
+  .main-itemList-board {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 50%);
   }
 
   .button-container {
