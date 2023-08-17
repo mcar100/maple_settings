@@ -1,6 +1,7 @@
 import React from 'react';
+import { styled } from 'styled-components';
 
-function MainNav({ setItemType }) {
+function MainNav({ itemType, setItemType }) {
   const handleItemType = (itemType) => {
     const newType = itemType;
     setItemType(newType);
@@ -9,23 +10,31 @@ function MainNav({ setItemType }) {
   return (
     <div className="main-nav">
       <ul>
-        <li
+        <MainNavLi
+          navtype={'boss'}
+          itemtype={itemType}
           onClick={() => {
             handleItemType('boss');
           }}
         >
-          보스 세팅
-        </li>
-        <li
+          보스
+        </MainNavLi>
+        <MainNavLi
+          navtype={'exp'}
+          itemtype={itemType}
           onClick={() => {
             handleItemType('exp');
           }}
         >
-          재획 세팅
-        </li>
+          사냥/재획
+        </MainNavLi>
       </ul>
     </div>
   );
 }
 
 export default MainNav;
+
+const MainNavLi = styled.li`
+  color: ${(props) => (props.itemtype === props.navtype ? '#f90' : '#303030')};
+`;

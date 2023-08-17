@@ -33,7 +33,7 @@ function MainPage() {
 
   return (
     <div className="main-container">
-      <MainNav setItemType={setItemType} />
+      <MainNav itemType={itemType} setItemType={setItemType} />
       <MainItemList
         itemType={itemType}
         itemList={itemList}

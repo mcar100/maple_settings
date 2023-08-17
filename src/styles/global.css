@@ -1,3 +1,7 @@
+body {
+  background-color: #303030;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -15,6 +19,8 @@
   grid-template-columns: 15% 40% 30% 15%;
 
   height: 10%;
+  min-height: 60px;
+  align-items: center;
 }
 
 .header-title {
@@ -28,13 +34,19 @@
 }
 
 .header-version {
+  justify-self: end;
   grid-row: 2/3;
-  grid-column: 4/5;
+  grid-column: 3/5;
+  font-size: 0.7rem;
+  margin-right: 10px;
 }
 
 .header-lastupdate {
+  justify-self: end;
   grid-row: 3/4;
-  grid-column: 4/5;
+  grid-column: 3/5;
+  font-size: 0.7rem;
+  margin-right: 10px;
 }
 
 .body-container {
@@ -308,5 +320,11 @@
 @media (min-width: 850px) {
   .main-itemList-container {
     width: 605px;
+  }
+}
+
+@media (max-height: 550px) {
+  .header-title {
+    display: none;
   }
 }

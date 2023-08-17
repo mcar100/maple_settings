@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { styled, css, keyframes } from 'styled-components';
+import { styled } from 'styled-components';
 
-function SwitchingItem({
-  item,
-  setTotalItemEffect,
-  reset,
-  setReset,
-  complete,
-  setComplete,
-}) {
-  const { shortTitle, image, stat, mode } = item;
+function SwitchingItem({ item, reset, setReset, complete, setComplete }) {
+  const { shortTitle, image, mode } = item;
   // 완료 버튼이 눌렸는지 감지
   const [isComplete, setIsComplete] = useState(false);
   // 아이템이 선택된지 확인

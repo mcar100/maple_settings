@@ -13,7 +13,7 @@ function Header() {
       </ul> */}
       </div>
       <div className="header-version">{version}</div>
-      <div className="header-lastupdate">{lastUpdate}</div>
+      <div className="header-lastupdate">updated: {lastUpdate}</div>
     </div>
   );
 }
