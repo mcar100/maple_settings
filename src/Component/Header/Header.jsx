@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function Header() {
   const [version, setVersion] = useState('v.1.0');
-  const [lastUpdate, setLastUpdate] = useState('23.08.16');
+  const [lastUpdate, setLastUpdate] = useState('23.08.23');
   return (
     <div className="header-container">
       <div className="header-title">메이플 세팅 체크 리스트</div>
