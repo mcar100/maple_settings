@@ -59,7 +59,10 @@ body {
 
 .footer-container {
   display: flex;
+  font-size: 10px;
+  color: gray;
   flex-direction: column-reverse;
+  justify-content: center;
   align-items: center;
   height: 10%;
 }
