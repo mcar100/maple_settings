@@ -14,5 +14,3 @@
 마지막 업데이트: 08.23
 
 # env
-
-REACT_APP_ITEMDB_URL - itemjson.db 접근 url

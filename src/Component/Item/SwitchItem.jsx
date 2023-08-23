@@ -68,11 +68,7 @@ function SwitchingItem({ item, reset, setReset, complete, setComplete }) {
       >
         <img
           loading="lazy"
-          src={
-            image
-              ? require(`../../assets/icons/${image}`)
-              : require(`../../assets/icons/no-image.jpg`)
-          }
+          src={image ? image : require(`../../assets/icons/no-image.jpg`)}
           alt={`${shortTitle}`}
         />
         <div className="main-item-title">{shortTitle}</div>

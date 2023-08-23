@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MainNav from './MainNav';
 import MainItemList from '../MainPage/MainItemList';
-import { getItemDB } from '../../api/getItemDB';
+import itemdb from '../../assets/itemdb.json';
 
 function MainPage() {
   const [itemType, setItemType] = useState('boss');
@@ -21,14 +21,7 @@ function MainPage() {
   });
 
   useEffect(() => {
-    async function fetchItemData() {
-      const data = await getItemDB();
-      if (data) {
-        setItemList(data);
-      }
-    }
-
-    fetchItemData();
+    setItemList(itemdb);
   }, []);
 
   return (
