@@ -19,7 +19,6 @@ function MainItemList({
         const newItemList = itemList.filter(
           (item) => item.type1 === itemType && item.type2 === 'potion/coupon'
         );
-        console.log(itemType);
         return newItemList;
       });
 
@@ -57,8 +56,6 @@ function MainItemList({
   };
 
   const handleCompleteBtn = () => {
-    console.log(`현재 적용 중인 효과`);
-    console.log(totalItemEffect);
     setComplete(true);
   };
 

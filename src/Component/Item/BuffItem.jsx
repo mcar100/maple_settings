@@ -44,7 +44,7 @@ function BuffItem({
     if (isComplete) {
       const setIntervalChecker = setInterval(() => {
         setTimeText((prev) => prev - 1);
-      }, 1000);
+      }, 1000 * 60);
       const setTimeoutChecker = setTimeout(() => {
         setItemChecked(false);
         setTimeText(timer);
@@ -56,7 +56,7 @@ function BuffItem({
           }
           return totalItemEffect;
         });
-      }, timer * 1000);
+      }, timer * 1000 * 60);
 
       return () => {
         clearInterval(setIntervalChecker);
@@ -135,7 +135,7 @@ const ItemContainer = styled.div`
   ${({ iscomplete, itemchecked, timer }) =>
     iscomplete && itemchecked
       ? css`
-          animation: ${boxColor} ${timer}s linear;
+          animation: ${boxColor} ${timer * 60}s linear;
           pointer-events: none;
         `
       : ''}
