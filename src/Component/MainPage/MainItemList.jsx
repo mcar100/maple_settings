@@ -13,6 +13,7 @@ function MainItemList({
   const [filteredItemList, setFilteredItemList] = useState('');
   const [filteredSwitchingItemList, setFilteredSwitchingItemList] =
     useState('');
+
   useEffect(() => {
     if (itemList) {
       setFilteredItemList(() => {

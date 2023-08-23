@@ -38,19 +38,19 @@ function SwitchingItem({ item, reset, setReset, complete, setComplete }) {
   return (
     <ItemContainer
       className="main-item-container"
-      itemchecked={itemChecked ? 'true' : ''}
-      iscomplete={isComplete ? 'true' : ''}
+      $itemchecked={itemChecked ? 'true' : ''}
+      $iscomplete={isComplete ? 'true' : ''}
     >
       {isComplete && itemChecked ? (
         <div className="main-item-mode">
-          <ModeChecked modechecked={'true'}>{selectedMode}</ModeChecked>
+          <ModeChecked $modechecked={'true'}>{selectedMode}</ModeChecked>
         </div>
       ) : (
         <div className="main-item-mode">
           {mode.map((unit, idx) => (
             <ModeChecked
               key={`mode-${idx}`}
-              modechecked={selectedMode === unit ? 'true' : ''}
+              $modechecked={selectedMode === unit ? 'true' : ''}
               onClick={() => {
                 setSelectedMode(unit);
               }}
@@ -84,10 +84,10 @@ function SwitchingItem({ item, reset, setReset, complete, setComplete }) {
 export default SwitchingItem;
 
 const ItemContainer = styled.div`
-  border-color: ${(props) => (props.itemchecked ? '#f90' : '#303030')};
-  color: ${(props) => (props.itemchecked ? '#f90' : '#303030')};
+  border-color: ${({ $itemchecked }) => ($itemchecked ? '#f90' : '#303030')};
+  color: ${({ $itemchecked }) => ($itemchecked ? '#f90' : '#303030')};
 `;
 
 const ModeChecked = styled.div`
-  color: ${(props) => (props.modechecked ? '#f90' : '#303030')};
+  color: ${({ $modechecked }) => ($modechecked ? '#f90' : '#303030')};
 `;

@@ -81,20 +81,20 @@ function BuffItem({
   return (
     <ItemContainer
       className="main-item-container"
-      itemchecked={itemChecked ? 'true' : ''}
-      iscomplete={isComplete ? 'true' : ''}
-      timer={timer ? timer : '0'}
+      $itemchecked={itemChecked ? 'true' : ''}
+      $iscomplete={isComplete ? 'true' : ''}
+      $timer={timer ? timer : '0'}
     >
       {isComplete && itemChecked ? (
         <div className="main-item-duration">
-          <TimeChecked timechecked={'true'}>{timeText}</TimeChecked>
+          <TimeChecked $timechecked={'true'}>{timeText}</TimeChecked>
         </div>
       ) : (
         <div className="main-item-duration">
           {duration.map((unit, idx) => (
             <TimeChecked
               key={`duration-${idx}`}
-              timechecked={timer === unit ? 'true' : ''}
+              $timechecked={timer === unit ? 'true' : ''}
               onClick={() => {
                 setTimer(unit);
                 setTimeText(unit);
@@ -129,20 +129,20 @@ function BuffItem({
 export default BuffItem;
 
 const ItemContainer = styled.div`
-  border-color: ${(props) => (props.itemchecked ? '#f90' : '#303030')};
-  color: ${(props) => (props.itemchecked ? '#f90' : '#303030')};
+  border-color: ${({ $itemchecked }) => ($itemchecked ? '#f90' : '#303030')};
+  color: ${({ $itemchecked }) => ($itemchecked ? '#f90' : '#303030')};
 
-  ${({ iscomplete, itemchecked, timer }) =>
-    iscomplete && itemchecked
+  ${({ $iscomplete, $itemchecked, $timer }) =>
+    $iscomplete && $itemchecked
       ? css`
-          animation: ${boxColor} ${timer * 60}s linear;
+          animation: ${boxColor} ${$timer * 60}s linear;
           pointer-events: none;
         `
       : ''}
 `;
 
 const TimeChecked = styled.div`
-  color: ${(props) => (props.timechecked ? '#f90' : '#303030')};
+  color: ${({ $timechecked }) => ($timechecked ? '#f90' : '#303030')};
 `;
 
 const boxColor = keyframes`

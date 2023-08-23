@@ -11,8 +11,8 @@ function MainNav({ itemType, setItemType }) {
     <div className="main-nav">
       <ul>
         <MainNavLi
-          navtype={'boss'}
-          itemtype={itemType}
+          $navtype={'boss'}
+          $itemtype={itemType}
           onClick={() => {
             handleItemType('boss');
           }}
@@ -20,8 +20,8 @@ function MainNav({ itemType, setItemType }) {
           보스
         </MainNavLi>
         <MainNavLi
-          navtype={'exp'}
-          itemtype={itemType}
+          $navtype={'exp'}
+          $itemtype={itemType}
           onClick={() => {
             handleItemType('exp');
           }}
@@ -36,5 +36,6 @@ function MainNav({ itemType, setItemType }) {
 export default MainNav;
 
 const MainNavLi = styled.li`
-  color: ${(props) => (props.itemtype === props.navtype ? '#f90' : '#303030')};
+  color: ${({ $itemtype, $navtype }) =>
+    $itemtype === $navtype ? '#f90' : '#303030'};
 `;
